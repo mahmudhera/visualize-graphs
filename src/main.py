@@ -56,7 +56,8 @@ def main(): # pragma: no cover
     g = graphviz.Graph('G', filename='hello.gv', engine='sfdp', format='svg', node_attr={'width' : '0.02', 'height':'0.02', 'fixedsize':'true', 'label':''})
     for (v1, v2, intensity, length) in list( zip(vertex_1_list, vertex_2_list, intensity_list, lengths_in_graph1) ):
         pen_width = str( max_width * intensity )
-        opacity = get_hex_from_intensity(intensity)
+        #opacity = get_hex_from_intensity(intensity)
+        opacity = get_hex_from_intensity(0.10)
         g.edge( get_encoding(v1.strip()) , get_encoding(v2.strip()), **{'color':'#0000ff' + opacity, 'len':str(max_length_in_inches*length)} )
     g.view()
 
