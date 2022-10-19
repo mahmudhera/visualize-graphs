@@ -57,7 +57,7 @@ def main(): # pragma: no cover
     for (v1, v2, intensity, length) in list( zip(vertex_1_list, vertex_2_list, intensity_list, lengths_in_graph1) ):
         pen_width = str( max_width * intensity )
         opacity = get_hex_from_intensity(intensity)
-        g.edge( get_encoding(v1.strip()) , get_encoding(v2.strip()), **{'color':'#0000ff' + opacity, 'penwidth':pen_width, 'len':str(max_length_in_inches*length)} )
+        g.edge( get_encoding(v1.strip()) , get_encoding(v2.strip()), **{'color':'#0000ff' + opacity, 'len':str(max_length_in_inches*length)} )
     g.view()
 
 if __name__ == '__main__':
